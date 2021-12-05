@@ -1,0 +1,95 @@
+ion-content {
+    --ion-background-color: linear-gradient(90deg, #27A8E2 0%, #0062D7 100%);
+    #simulate-form {
+        background: #FFFFFF;
+        box-shadow: 20px 39px 43px rgb(0 0 0 / 10%);
+        border-radius: 19px;
+        padding: 45px 25px;
+        margin: 100px auto 70px;
+        text-align: center;
+        width: 273px;
+        position: relative;
+        #rectangles {
+            #rec-70 {
+                top: -20px;
+                left: 50px;
+                position: absolute;
+            }
+            #rec-71 {
+                top: -6px;
+                left: 30px;
+                position: absolute;
+            }
+            #rec-72 {
+                top: -35px;
+                left: 35px;
+                position: absolute;
+            }
+            #rec-73 {
+                top: -50px;
+                left: 30px;
+                position: absolute;
+            }
+        }
+        img {
+            display: block;
+            margin: auto;
+        }
+        #amount-title {
+            font-size: 12px;
+            color: #0062D7;
+            margin: 0.5rem 0;
+        }
+        .simulate-block {
+            margin-top: 1rem;
+            ion-label {
+                font-weight: 600;
+                font-size: 17px;
+                color: #0062D7;
+                margin-bottom: 5px;
+                display: block;
+            }
+            input {
+                background: #F3EEE7;
+                border-radius: 15px;
+                border: none;
+                width: 100%;
+                padding: 4px 20px;
+                color: #777777;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        #simulate-btn {
+            border-radius: 15px;
+            font-weight: 700;
+            text-align: center;
+            font-size: 15px;
+            height: 30px;
+            width: 100%;
+            background: #43F48D;
+            color: #0062D7;
+            margin-top: 12px;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin: 0.5rem 0 0 1rem;
+        }
+        #back {
+            margin: 1rem auto 0;
+            text-align: center;
+            color: #000;
+            font-size: 12px;
+        }
+    }
+}
+
+.color-primary {
+    color: #0062D7;
+}
+
+button.disabled,
+button:disabled {
+    opacity: .65;
+}

@@ -1,0 +1,28 @@
+<ion-content fullscreen center class="ion-padding" scroll-y="false">
+    <form id="simulate-form" [formGroup]="simulateForm" (ngSubmit)="submitForm()">
+        <div id="rectangles">
+            <img src="assets/img/rectangle-70.png" id="rec-70" />
+            <img src="assets/img/rectangle-71.png" id="rec-71" />
+            <img src="assets/img/rectangle-72.png" id="rec-72" />
+            <img src="assets/img/rectangle-73.png" id="rec-73" />
+        </div>
+        <img src="assets/img/logo2.png" />
+        <p id="simulate-title">Taxas de 1,99% a.m.</p>
+        <div class="simulate-block">
+            <ion-label>Qual o seu saldo no FGTS?</ion-label>
+            <input type="number" formControlName="balance" name="balance" placeholder="R$ 1000,00" autocomplete="off">
+            <small>Não sei. <a href="" class="color-primary">Acessar FGTS</a></small>
+        </div>
+        <ion-label *ngFor="let error of error_messages.balance">
+            <div class="error-message" *ngIf="simulateForm.get('balance').hasError(error.type) && (simulateForm.get('balance').dirty || simulateForm.get('balance').touched)">
+                {{ error.message }}
+            </div>
+        </ion-label>
+        <div class="simulate-block">
+            <ion-label>Qual sua data de nascimento?</ion-label>
+            <ion-datetime formControlName="birthday" placeholder="dd/mm/aaaa"></ion-datetime>
+        </div>
+        <button type="submit" id="simulate-btn" [disabled]="!simulateForm.valid">SIMULE</button>
+    </form>
+    <p id="back" (click)="return_page()">Voltar</p>
+</ion-content>

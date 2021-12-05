@@ -1,0 +1,48 @@
+<ion-content fullscreen center class="ion-padding" scroll-y="false">
+    <div id="rectangles">
+        <img src="assets/img/rectangle-104.png" id="rec-104" />
+        <img src="assets/img/rectangle-105.png" id="rec-105" />
+        <img src="assets/img/rectangle-106.png" id="rec-106" />
+        <img src="assets/img/rectangle-107.png" id="rec-107" />
+        <img src="assets/img/rectangle-108.png" id="rec-108" />
+        <img src="assets/img/rectangle-109.png" id="rec-109" />
+        <img src="assets/img/rectangle-110.png" id="rec-110" />
+    </div>
+    <form id="auth-block" [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        <img src="assets/img/logo1.png" />
+        <div class="auth-input">
+            <input type="email" formControlName="email" name="email" placeholder="E-mail" autocomplete="off">
+            <ion-icon name="person" slot="end"></ion-icon>
+        </div>
+        <ion-label *ngFor="let error of error_messages.email">
+            <div class="error-message" *ngIf="loginForm.get('email').hasError(error.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                {{ error.message }}
+            </div>
+            <div class="error-message" *ngIf="!loginForm.get('email').hasError(error.type) && loginForm.controls.email.valid == false">
+                {{ error.valid_message }}
+            </div>
+        </ion-label>
+
+        <div class="auth-input">
+            <input [type]="password_type" formControlName="password" name="password" [(ngModel)]="password" placeholder="Senha" autocomplete="off">
+            <ion-icon name="eye" slot="end" (click)="togglePasswordMode()"></ion-icon>
+        </div>
+        <ion-label *ngFor="let error of error_messages.password">
+            <div class="error-message" *ngIf="loginForm.get('password').hasError(error.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                {{ error.message }}
+            </div>
+        </ion-label>
+
+        <small class="color-white">Esqueceu sua senha? <a href="" class="color-success">Te ajudamos!</a></small>
+        <div id="auth-buttons">
+            <ion-row>
+                <ion-col size="6">
+                    <button type="submit" id="login-btn" [disabled]="!loginForm.valid">ENTRAR</button>
+                </ion-col>
+                <ion-col size="6">
+                    <button type="button" id="register-btn" (click)="register_link()">CADASTRE-SE</button>
+                </ion-col>
+            </ion-row>
+        </div>
+    </form>
+</ion-content>

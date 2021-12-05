@@ -1,0 +1,68 @@
+<ion-app>
+    <ion-header class="ion-no-border">
+        <ion-toolbar>
+            <ion-title>Perfil</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <div class="background-holder"></div>
+        <div class="top-card ion-text-center ion-padding-vertical">
+            <ion-avatar>
+                <img src="assets/img/profile.png" alt="profile">
+            </ion-avatar>
+            <div id="details">
+                <h5>Bruna Bellincanta</h5>
+                <p> (e-mail validado: <img src="assets/img/verified.svg"> )</p>
+            </div>
+        </div>
+        <div class="bottom-section ion-padding">
+            <h5>Alterar dados</h5>
+            <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
+                <ion-label>Nomo completo</ion-label>
+                <ion-item>
+                    <ion-input formControlName="name" type="text" placeholder="Informe seu nome completo" clearInput></ion-input>
+                </ion-item>
+                <div *ngFor="let error of error_messages.name">
+                    <div class="error-message" *ngIf="profileForm.get('name').hasError(error.type) && (profileForm.get('name').dirty || profileForm.get('name').touched)">
+                        {{ error.message }}
+                    </div>
+                </div>
+                <ion-label>Data de Nascimento</ion-label>
+                <ion-item>
+                    <ion-datetime formControlName="birthday" placeholder="DD/MM/YYYY" displayFormat="DD/MM/YYYY"></ion-datetime>
+                </ion-item>
+                <div *ngFor="let error of error_messages.birthday">
+                    <div class="error-message" *ngIf="profileForm.get( 'birthday').hasError(error.type) && (profileForm.get( 'birthday').dirty || profileForm.get( 'birthday').touched) ">
+                        {{ error.message }}
+                    </div>
+                </div>
+                <button type="submit" id="profile-btn" [disabled]="!profileForm.valid ">Salvar Alteração</button>
+            </form>
+        </div>
+    </ion-content>
+    <ion-footer>
+        <ion-toolbar>
+            <ul>
+                <li>
+                    <ion-icon name="home-outline"></ion-icon>
+                    <ion-label>Home</ion-label>
+                </li>
+                <li>
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                    <ion-label>Dúvidas</ion-label>
+                </li>
+                <li>
+                    <ion-icon name="logo-usd"></ion-icon>
+                </li>
+                <li (click)="tab4()">
+                    <ion-icon name="chatbubbles"></ion-icon>
+                    <ion-label>Indicações</ion-label>
+                </li>
+                <li>
+                    <ion-icon name="person-outline"></ion-icon>
+                    <ion-label>Perfil</ion-label>
+                </li>
+            </ul>
+        </ion-toolbar>
+    </ion-footer>
+</ion-app>

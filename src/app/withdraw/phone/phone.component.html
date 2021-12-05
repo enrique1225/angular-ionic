@@ -1,0 +1,28 @@
+<ion-content fullscreen center class="ion-padding" scroll-y="false">
+    <img src="assets/img/logo3.png" />
+    <div id="rectangles">
+        <img src="assets/img/rectangle-124.png" id="rec-117" />
+        <img src="assets/img/rectangle-118.png" id="rec-118" />
+        <img src="assets/img/rectangle-119.png" id="rec-119" />
+        <img src="assets/img/rectangle-124.png" id="rec-120" />
+        <img src="assets/img/rectangle-121.png" id="rec-121" />
+        <img src="assets/img/rectangle-118.png" id="rec-122" />
+    </div>
+    <form id="phone-form" [formGroup]="phoneForm" (ngSubmit)="submitForm()">
+        <ion-item>
+            <ion-label position="floating">Informe seu telefone</ion-label>
+            <ion-input type="number" formControlName="phone" name="phone" placeholder="11 95463 2135" autocomplete="off"></ion-input>
+        </ion-item>
+        <ion-label *ngFor="let error of error_messages.phone">
+            <div class="error-message" *ngIf="phoneForm.get('phone').hasError(error.type) && (phoneForm.get('phone').dirty || phoneForm.get('phone').touched)">
+                {{ error.message }}
+            </div>
+        </ion-label>
+        <p id="phone-title">Receba uma ligação<br> no seu telefone</p>
+        <p>Um dos nossos<br>especialistas entrará em<br>contato para solucionar<br>suas dúvidas</p>
+        <div class="text-right">
+            <span (click)="cancel()">Cancelar</span>
+            <span (click)="ok()" id="ok">OK</span>
+        </div>
+    </form>
+</ion-content>

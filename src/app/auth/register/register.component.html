@@ -1,0 +1,84 @@
+<ion-content>
+    <div id="register-block">
+        <div id="rectangles">
+            <img src="assets/img/rectangle-111.png" id="rec-111" />
+            <img src="assets/img/rectangle-112.png" id="rec-112" />
+            <img src="assets/img/rectangle-113.png" id="rec-113" />
+            <img src="assets/img/rectangle-113.png" id="rec-114" />
+            <img src="assets/img/rectangle-115.png" id="rec-115" />
+            <img src="assets/img/rectangle-116.png" id="rec-116" />
+        </div>
+        <div id="register-title">
+            <p class="title">Bem vindo ao cadastro</p>
+            <small>Simples e rápido</small>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+            <div id="register-form">
+                <ion-item>
+                    <ion-label position="floating">Nomo completo</ion-label>
+                    <ion-input formControlName="name" type="text" placeholder="Informe seu nome completo" clearInput></ion-input>
+                </ion-item>
+                <ion-label *ngFor="let error of error_messages.name">
+                    <div class="error-message" *ngIf="registerForm.get('name').hasError(error.type) && (registerForm.get('name').dirty || registerForm.get('name').touched)">
+                        {{ error.message }}
+                    </div>
+                </ion-label>
+
+                <ion-item>
+                    <ion-label position="floating">Data de Nascimento</ion-label>
+                    <ion-datetime (ionChange)="getDate($event)" formControlName="birthday" clearInput></ion-datetime>
+                </ion-item>
+                <ion-label *ngFor="let error of error_messages.birthday">
+                    <div class="error-message" *ngIf="registerForm.get('birthday').hasError(error.type) && (registerForm.get('birthday').dirty || registerForm.get('birthday').touched)">
+                        {{ error.message }}
+                    </div>
+                </ion-label>
+
+                <ion-item>
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-input formControlName="email" type="email" placeholder="Informe sua data de nascimento" clearInput></ion-input>
+                </ion-item>
+                <ion-label *ngFor="let error of error_messages.email">
+                    <div class="error-message" *ngIf="registerForm.get('email').hasError(error.type) && (registerForm.get('email').dirty || registerForm.get('email').touched)">
+                        {{ error.message }}
+                    </div>
+                    <div class="error-message" *ngIf="!registerForm.get('email').hasError(error.type) && registerForm.controls.email.valid == false">
+                        {{ error.valid_message }}
+                    </div>
+                </ion-label>
+
+                <ion-item>
+                    <ion-label position="floating">Senha</ion-label>
+                    <ion-input formControlName="password" type="password" placeholder="Defina sua senha" clearInput></ion-input>
+                </ion-item>
+                <ion-label *ngFor="let error of error_messages.password">
+                    <div class="error-message" *ngIf="registerForm.get('password').hasError(error.type) && (registerForm.get('password').dirty || registerForm.get('password').touched)">
+                        {{ error.message }}
+                    </div>
+                </ion-label>
+
+                <ion-item>
+                    <ion-label position="floating">Repetir Senha</ion-label>
+                    <ion-input formControlName="confirmpassword" type="password" placeholder="Repita a senha" clearInput></ion-input>
+                </ion-item>
+                <ion-label *ngFor="let error of error_messages.confirmpassword">
+                    <div class="error-message" *ngIf="registerForm.get('confirmpassword').hasError(error.type) && (registerForm.get('confirmpassword').dirty || registerForm.get('confirmpassword').touched)">
+                        {{ error.message }}
+                    </div>
+                </ion-label>
+                <div class="error-message" *ngIf="!registerForm.get('confirmpassword').errors && registerForm.hasError('passwordNotMatch') && (registerForm.get('confirmpassword').dirty || registerForm.get('confirmpassword').touched)">
+                    Password and Confirm Password fields should match
+                </div>
+            </div>
+            <div id="term-block">
+                <div id="term-check">
+                    <input type="checkbox" id="checkbox" />
+                    <label for="checkbox"></label>
+                    <span>Concordo com todos os termos de uso da Tegge</span>
+                </div>
+                <button type="submit" id="register-btn" [disabled]="!registerForm.valid">CADASTRAR</button>
+            </div>
+            <p id="back" (click)="return_page()">Voltar</p>
+        </form>
+    </div>
+</ion-content>

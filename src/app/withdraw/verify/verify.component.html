@@ -1,0 +1,28 @@
+<ion-content fullscreen center class="ion-padding" scroll-y="false">
+    <img src="assets/img/logo3.png" id="logo" />
+    <img src="assets/img/lock.png" />
+    <p id="lgpd-title">Respeitamos a <span>LGPD</span></p>
+    <p id="title-description">Suas informações estão seguras com a Tegge</p>
+    <div id="rectangles">
+        <img src="assets/img/rectangle-117.png" id="rec-117" />
+        <img src="assets/img/rectangle-118.png" id="rec-118" />
+        <img src="assets/img/rectangle-119.png" id="rec-119" />
+        <img src="assets/img/rectangle-120.png" id="rec-120" />
+        <img src="assets/img/rectangle-121.png" id="rec-121" />
+    </div>
+    <form id="verify-form" [formGroup]="verifyForm" (ngSubmit)="submitForm()">
+        <p id="verify-title">Verificação</p>
+        <p id="verify-text">Vamos verificar a autorização no<br>aplicativo do FGTS a partir do seu CPF</p>
+        <ion-item>
+            <ion-label position="floating">Informe seu CPF</ion-label>
+            <ion-input type="text" formControlName="CPF" name="CPF" placeholder="000.000.000-04" autocomplete="off"></ion-input>
+        </ion-item>
+        <ion-label *ngFor="let error of error_messages.CPF">
+            <div class="error-message" *ngIf="verifyForm.get('CPF').hasError(error.type) && (verifyForm.get('CPF').dirty || verifyForm.get('CPF').touched)">
+                {{ error.message }}
+            </div>
+        </ion-label>
+        <button type="submit" id="verify-btn" [disabled]="!verifyForm.valid">VERIFICAR</button>
+    </form>
+    <ion-icon name="arrow-back" (click)="prev_page()"></ion-icon>
+</ion-content>

@@ -1,0 +1,104 @@
+<ion-content fullscreen center class="ion-padding">
+    <div id="avatar-block">
+        <ion-icon name="menu-outline" (click)="home()"></ion-icon>
+        <img id="avatar" src="assets/img/avatar.png" />
+        <img id="logo" src="assets/img/logo4.png" />
+    </div>
+    <div id="user-block">
+        <div id="rectangles">
+            <img src="assets/img/rectangle-71.png" id="rec-70" />
+            <img src="assets/img/rectangle-71.png" id="rec-71" />
+            <img src="assets/img/rectangle-125.png" id="rec-125" />
+            <img src="assets/img/rectangle-126.png" id="rec-126" />
+        </div>
+        <ion-label>Qual o seu saldo no FGTS?</ion-label>
+        <p class="number">426.507.448-04</p>
+        <ion-row class="info-block">
+            <ion-text>Saldo FGTS</ion-text>
+            <ion-text>R$ <span id="blue-number">15329,58</span></ion-text>
+        </ion-row>
+        <ion-row class="info-block">
+            <ion-text>Permitido antecipar<br>
+                <p>com taxa de juros de 1,99% a.m.</p>
+            </ion-text>
+            <ion-text>R$ <span id="green-number">10257,22</span></ion-text>
+        </ion-row>
+    </div>
+    <div id="price-block">
+        <ion-row id="price">
+            <p>Quanto você<br>quer sacar?</p>
+            <div id="withdraw-price">
+                <ion-label>R$</ion-label>
+                <input type="number" value="1025722">
+            </div>
+        </ion-row>
+        <ion-row id="price-buttons">
+            <button type="button">Valor Parcial</button>
+            <button type="button">Valor total</button>
+        </ion-row>
+        <small>Selecione o valor por ano:</small>
+    </div>
+    <div id="request-blocks">
+        <div class="request-block">
+            <ion-label>01/09/2021</ion-label>
+            <ion-range min="0" max="5000" color="success" (ionChange)="onChangePrice1($event)"></ion-range>
+            <ion-label>Valor solicitado: R$
+                <span id="price1"></span>
+            </ion-label>
+        </div>
+        <div class="request-block">
+            <ion-label>01/09/2022</ion-label>
+            <ion-range min="0" max="5000" color="success" (ionChange)="onChangePrice2($event)"></ion-range>
+            <ion-label>Valor solicitado: R$
+                <span id="price2"></span>
+            </ion-label>
+        </div>
+        <div class="request-block">
+            <ion-label>01/09/2023</ion-label>
+            <ion-range min="0" max="5000" color="success" (ionChange)="onChangePrice3($event)"></ion-range>
+            <ion-label>Valor solicitado: R$
+                <span id="price3"></span>
+            </ion-label>
+        </div>
+        <div class="request-block">
+            <ion-label>01/09/2024</ion-label>
+            <ion-range min="0" max="5000" color="success" (ionChange)="onChangePrice4($event)"></ion-range>
+            <ion-label>Valor solicitado: R$
+                <span id="price4"></span>
+            </ion-label>
+        </div>
+        <div class="request-block">
+            <ion-label>01/09/2025</ion-label>
+            <ion-range min="0" max="5000" color="success" (ionChange)="onChangePrice5($event)"></ion-range>
+            <ion-label>Valor solicitado: R$
+                <span id="price5"></span>
+            </ion-label>
+        </div>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+        <ul>
+            <li>
+                <ion-icon name="home-outline"></ion-icon>
+                <ion-label>Início</ion-label>
+            </li>
+            <li (click)="tab2()">
+                <ion-icon name="logo-usd"></ion-icon>
+                <ion-label>Início</ion-label>
+            </li>
+            <li>
+                <ion-icon name="add-outline"></ion-icon>
+                <ion-label>Antecipar</ion-label>
+            </li>
+            <li>
+                <ion-icon name="bag-outline"></ion-icon>
+                <ion-label>Carteira</ion-label>
+            </li>
+            <li (click)="tab5()">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-label>Perfil</ion-label>
+            </li>
+        </ul>
+    </ion-toolbar>
+</ion-footer>

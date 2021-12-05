@@ -1,0 +1,23 @@
+<ion-content fullscreen center class="ion-padding" scroll-y="false">
+    <form id="simulate-form" [formGroup]="simulateForm" (ngSubmit)="submitForm()">
+        <div id="rectangles">
+            <img src="assets/img/rectangle-70.png" id="rec-70" />
+            <img src="assets/img/rectangle-71.png" id="rec-71" />
+            <img src="assets/img/rectangle-72.png" id="rec-72" />
+            <img src="assets/img/rectangle-73.png" id="rec-73" />
+        </div>
+        <img src="assets/img/logo2.png" />
+        <p id="amount-title">Taxas de 1,99% a.m.</p>
+        <div class="simulate-block">
+            <ion-label>Valor Liberado</ion-label>
+            <input type="number" formControlName="amount" name="amount" placeholder="R$ 5.464,36" autocomplete="off">
+        </div>
+        <ion-label *ngFor="let error of error_messages.amount">
+            <div class="error-message" *ngIf="simulateForm.get('amount').hasError(error.type) && (simulateForm.get('amount').dirty || simulateForm.get('amount').touched)">
+                {{ error.message }}
+            </div>
+        </ion-label>
+        <button type="submit" id="simulate-btn" [disabled]="!simulateForm.valid">SOLICITAR SAQUE</button>
+        <p id="back" (click)="return_page()">Simular novamente</p>
+    </form>
+</ion-content>

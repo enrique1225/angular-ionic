@@ -1,0 +1,38 @@
+ion-content {
+    --ion-background-color: linear-gradient(90deg, #27A8E2 0%, #0062D7 100%);
+    padding: 2.5rem;
+    img {
+        display: block;
+        margin: auto;
+    }
+    #intro-title {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 59px;
+        color: #43F48D;
+        text-transform: uppercase;
+        padding: 0;
+        position: absolute;
+        bottom: 190px;
+        .font-64 {
+            font-size: 64px;
+        }
+    }
+    ion-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 33px;
+        color: #fff;
+        position: absolute;
+        bottom: 130px;
+    }
+    ion-icon {
+        color: #fff;
+        font-size: 30px;
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+    }
+}

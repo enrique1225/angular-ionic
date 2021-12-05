@@ -1,0 +1,44 @@
+<ion-content fullscreen center class="ion-padding" scroll-y="false">
+    <div id="steps-page">
+        <div id="rectangles">
+            <img src="assets/img/rectangle-117.png" id="rec-117" />
+            <img src="assets/img/rectangle-118.png" id="rec-118" />
+            <img src="assets/img/rectangle-119.png" id="rec-119" />
+            <img src="assets/img/rectangle-120.png" id="rec-120" />
+            <img src="assets/img/rectangle-121.png" id="rec-121" />
+            <img src="assets/img/rectangle-122.png" id="rec-122" />
+            <img src="assets/img/rectangle-123.png" id="rec-123" />
+        </div>
+        <ion-slides [pager]="pager" [options]="slideOpts" (ionSlideWillChange)="updateSliderIconState()" (ionSlidesDidLoad)="updateSliderIconState()" #mySlider>
+            <ion-slide>
+                <p class="color-white">Acesse o aplicativo do <span class="color-success"><b>FGTS</b></span><br>com sua senha do gov.br</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="color-white">Selecione a opção<br><span class="color-success"><b>"Saque Aniversário do FGTS"</b></span><br>no menu principal</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="color-white font-28">Aceite o termo<br>e continue</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="color-white">Clique em<br><span class="color-success">"Autorizar bancos a</span><br><span class="color-success">consultarem seu FGTS"</span></p>
+            </ion-slide>
+            <ion-slide>
+                <p class="color-white">Prossiga ao aceitar<br>termos e condições</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="color-white">Digite e escolha a <span class="color-success"><b>UP.P,</b></span><br>instituição financeira<br>parceira da Tegge</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="color-white">Autorize a consulta<br>e confirme</p>
+            </ion-slide>
+            <ion-slide>
+                <p class="color-white">Prossiga com a<br> antecipação no aplicativo ou<br>com a equipe de especialistas</p>
+            </ion-slide>
+        </ion-slides>
+        <img src="assets/img/phone.png" id="phone" />
+        <div id="arrow-buttons">
+            <ion-icon id="prev-icon" name="arrow-back" (click)="prev_slide()"></ion-icon>
+            <ion-icon id="next-icon" name="arrow-forward" (click)="next_slide()"></ion-icon>
+        </div>
+    </div>
+</ion-content>

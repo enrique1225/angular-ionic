@@ -1,0 +1,89 @@
+ion-content {
+    --ion-background-color: linear-gradient(90deg, #27A8E2 0%, #0062D7 100%);
+    #rectangles {
+        width: 214px;
+        height: 344px;
+        position: absolute;
+        left: calc(50% - 107px);
+        bottom: 45px;
+        #rec-117 {
+            top: 80px;
+            left: 0;
+            position: absolute;
+        }
+        #rec-118 {
+            top: 50px;
+            left: -20px;
+            position: absolute;
+        }
+        #rec-119 {
+            top: -35px;
+            left: 10px;
+            position: absolute;
+        }
+        #rec-120 {
+            top: -20px;
+            left: 60px;
+            position: absolute;
+        }
+        #rec-121 {
+            top: -5px;
+            right: 0;
+            position: absolute;
+        }
+        #rec-122 {
+            top: 20px;
+            right: 5px;
+            position: absolute;
+        }
+        #rec-123 {
+            bottom: -46px;
+            right: -73px;
+            position: absolute;
+        }
+    }
+    ion-slide {
+        text-align: center;
+        p {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: 0em;
+            margin: 0 0 0.5rem 0;
+            &.font-28 {
+                font-size: 28px;
+            }
+            &.color-white {
+                color: #fff;
+            }
+            .color-success {
+                color: #43F48D;
+            }
+        }
+    }
+    ion-slides {
+        --bullet-background: white;
+        --bullet-background-active: #43F48D;
+        padding-top: 100px;
+    }
+    #phone {
+        position: absolute;
+        left: calc(50% - 107px);
+        bottom: 40px;
+    }
+    #arrow-buttons {
+        ion-icon {
+            color: #fff;
+            font-size: 30px;
+            position: absolute;
+            bottom: 50px;
+            &#prev-icon {
+                left: 50px;
+            }
+            &#next-icon {
+                right: 50px;
+            }
+        }
+    }
+}

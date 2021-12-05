@@ -1,0 +1,128 @@
+<ion-app>
+    <ion-header class="ion-no-border md header-md header-collapse-none hydrated">
+        <div class="toolbar-title-default md in-toolbar hydrated">
+            <ion-buttons>
+                <ion-back-button text="Voltar" class="md button in-toolbar ion-activatable ion-focusable show-back-button hydrated"></ion-back-button>
+            </ion-buttons>
+            <ion-title>Certeira<span> de indicações</span></ion-title>
+        </div>
+    </ion-header>
+    <ion-content>
+        <ion-slides class="ios slides-ios swiper-container hydrated swiper-container-initialized swiper-container-horizontal tab-slide">
+            <ion-slide class="md swiper-slide swiper-zoom-container hydrated swiper-slide-active">
+                <ion-card class="ios hydrated">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col class="md">
+                                <h3>Indique quem quer antecipar e receba uma comissão</h3>
+                            </ion-col>
+                            <ion-col class="color-value-background md hydrated">
+                                <br>
+                                <br>
+                                <small>Como funciona: você indica pessoas e se eles anteciparem o FGTS, você recebe 1% do valor antecipado.</small>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+        <ion-segment (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="indicate">
+                <ion-label>Indique</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="balance">
+                <ion-label>Seu saldo</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+        <div class="list-holder ion-padding-horizontal" [hidden]="hideIndicate">
+            <h3>Meus links para indicação</h3>
+            <ion-item class="item md item-lines-none ion-focusable hydrated item-label">
+                <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+                    <h5>Facebook</h5>
+                    <p>
+                        <small>https://www.tgg.ai/YP48u</small>
+                        <ion-button class="md button button-small button-solid ion-activatable ion-focusable hydrated">Copiar</ion-button>
+                    </p>
+                    <img id="avatar" src="assets/img/qrcode1.png" />
+                </ion-label>
+            </ion-item>
+            <ion-item class="item md item-lines-none ion-focusable hydrated item-label">
+                <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+                    <h5>Teste</h5>
+                    <p>
+                        <small>https://www.tgg.ai/3BIjI</small>
+                        <ion-button class="md button button-small button-solid ion-activatable ion-focusable hydrated">Copiar</ion-button>
+                    </p>
+                    <img id="avatar" src="assets/img/qrcode2.png" />
+                </ion-label>
+            </ion-item>
+            <div class="send-money">
+                <ion-button class="md button button-medium button-solid ion-activatable ion-focusable hydrated">Criar LINK</ion-button>
+                <h3>Nenhum amigo indicado</h3>
+            </div>
+        </div>
+        <div class="list-holder ion-padding-horizontal" [hidden]="hideBalance">
+            <p class="balance-text">Sua conta será criada automaticamente se você receber a comissão pela indicação.</p>
+            <p class="balance-text">Quando aberta e mantida sem alteração não terá nenhuma taxa.</p>
+            <ion-row>
+                <ion-col>
+                    <div class="ion-text-start">
+                        Saldo restante
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="ion-text-end">
+                        end
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-progress-bar color="danger"></ion-progress-bar>
+            <ion-item lines="none">
+                <img src="assets/img/bill.svg">
+                <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+                    <p>Análise</p>
+                    <h4>R$ 0,00</h4>
+                </ion-label>
+            </ion-item>
+            <ion-item lines="none">
+                <img src="assets/img/up1.svg">
+                <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+                    <p>Disponível</p>
+                    <h4>R$ 0,00</h4>
+                </ion-label>
+            </ion-item>
+            <ion-item lines="none">
+                <img src="assets/img/down1.svg">
+                <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
+                    <p>Sacado</p>
+                    <h4>R$ 0,00</h4>
+                </ion-label>
+            </ion-item>
+        </div>
+    </ion-content>
+    <ion-footer>
+        <ion-toolbar>
+            <ul>
+                <li>
+                    <ion-icon name="home-outline"></ion-icon>
+                    <ion-label>Home</ion-label>
+                </li>
+                <li>
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                    <ion-label>Dúvidas</ion-label>
+                </li>
+                <li>
+                    <ion-icon name="logo-usd"></ion-icon>
+                </li>
+                <li>
+                    <ion-icon name="chatbubbles"></ion-icon>
+                    <ion-label>Indicações</ion-label>
+                </li>
+                <li (click)="tab5()">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <ion-label>Perfil</ion-label>
+                </li>
+            </ul>
+        </ion-toolbar>
+    </ion-footer>
+</ion-app>

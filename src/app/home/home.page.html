@@ -1,0 +1,37 @@
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+            <img src="assets/img/carousel1.png" />
+            <p class="color-white">Descubra quanto <br> você pode sacar do <br> seu <span class="color-success"><b>FGTS</b></span></p>
+        </ion-slide>
+
+        <ion-slide>
+            <img src="assets/img/carousel2.png" />
+            <p class="color-white m-0">Quer saber<br> como funciona?<br><small class="font-18">Você pode antecipar até 6</small></p>
+            <p class="color-success"><b>Saques Aniversários</b></p>
+        </ion-slide>
+
+        <ion-slide>
+            <img src="assets/img/carousel3.png" class="m-0" />
+            <p class="font-30"><span class="color-success">Nova modalidade</span><br>
+                <span class="color-white">do FGTS</span>
+            </p>
+            <p class="color-white font-18">Uma nova maneira de facilitar que as pessoas tenham acesso a recursos financeiros baratos</p>
+        </ion-slide>
+    </ion-slides>
+    <div id="auth-buttons">
+        <ion-row>
+            <ion-col size="12">
+                <button id="simulator-btn" routerLink="simulate">SIMULAR AGORA</button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="6">
+                <button type="button" id="login-btn" routerLink="login">ENTRAR</button>
+            </ion-col>
+            <ion-col size="6">
+                <button type="button" id="register-btn" routerLink="register">CADASTRE-SE</button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>
