@@ -1,6 +1,5 @@
-# 51_2021_10_ionic_angular
-
 This is a balance management system with Ionic + Angular.
+
 Ionic: 6.17.1
 Angular: 12.2.12
 
